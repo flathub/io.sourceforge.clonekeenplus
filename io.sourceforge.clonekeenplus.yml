@@ -20,8 +20,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v2.8.1"
-        commit: "3234822b3d080367722a0ef5bb554608d9061124"
+        tag: "v2.8.2"
+        commit: "9b3ce12cf93b5880510e1a94ceb8e76e86a8b699"
     config-opts:
       - -DUSE_SDL2=yes
       - -DUSE_BOOST=false
