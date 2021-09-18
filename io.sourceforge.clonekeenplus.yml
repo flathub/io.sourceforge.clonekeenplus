@@ -20,8 +20,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v2.8.2.5"
-        commit: "4479a43c3a4964fa5f4f23eac3282aeb1b8ee6b1"
+        tag: "v3.0.0.0"
+        commit: "ccbc1422dfcd6cd719cbdcc38a4b2eff4c53aa4d"
     config-opts:
       - -DSHAREDIR=/app/share
       - -DAPPDIR=/app/bin
