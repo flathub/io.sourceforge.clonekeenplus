@@ -18,13 +18,18 @@ modules:
   - name: cgenius
     buildsystem: cmake
     sources:
+      - type: script
+        commands:
+         - git submodule init
+         - git submodule update
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.0.0.0"
+        tag: "v3.0.0"
         commit: "ccbc1422dfcd6cd719cbdcc38a4b2eff4c53aa4d"
     config-opts:
       - -DSHAREDIR=/app/share
       - -DAPPDIR=/app/bin
+      - -DBUILD_COSMOS=1
     builddir: true
     post-install:
       - for s in 16 32 48 64 128 256 512; do install -D -m 644 -t $FLATPAK_DEST/share/hicolor/${s}x${s}/apps ../share/cg.${s}.png; done
