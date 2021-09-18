@@ -18,13 +18,11 @@ modules:
   - name: cgenius
     buildsystem: cmake
     sources:
+   
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.0.0"
-        commit: "ccbc1422dfcd6cd719cbdcc38a4b2eff4c53aa4d"
-      - type: script
-        commands:
-         - git clone https://gitlab.com/Dringgstein/cosmos.git src/engine
+        tag: "v3.0.1"
+        commit: "2d980237313e0f0db4b1016a7933d73004d55133"
         
     config-opts:
       - -DSHAREDIR=/app/share
