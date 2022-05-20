@@ -5,19 +5,19 @@ Commander Genius Flatpak support
 # Building
 
 ```
-flatpak-builder build-dir org.flatpak.commandergenius.yml
+flatpak-builder build-dir io.sourceforge.clonekeenplus.yml
 ```
 
 # Installing it
 
 ```
-flatpak-builder build-dir org.commandergenius.yml
+flatpak-builder build-dir io.sourceforge.clonekeenplus.yml
 ```
 
 # Running it
 
 ```
-flatpak run org.commandergenius.cgenius 
+flatpak run io.sourceforge.clonekeenplus.yml
 ```
 
 
