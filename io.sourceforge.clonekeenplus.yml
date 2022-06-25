@@ -20,13 +20,14 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.1.0"
-        commit: "4fdfac6355afb8a14ced303cb8c51d5ca750806c"
+        tag: "v3.1.3"
+        commit: "526cdf013a8b8cd3a8c008c868dd5824cbe5377c"
         
     config-opts:
       - -DSHAREDIR=/app/share
       - -DAPPDIR=/app/bin
       - -DBUILD_COSMOS=1
+      - -DCMAKE_BUILD_TYPE="Release"
     builddir: true
     post-install:
       - for s in 16 32 48 64 128 256 512; do install -D -m 644 -t $FLATPAK_DEST/share/hicolor/${s}x${s}/apps ../share/cg.${s}.png; done
