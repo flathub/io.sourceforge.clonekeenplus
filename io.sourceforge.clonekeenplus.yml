@@ -19,8 +19,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.4.8"
-        commit: "cfb74c69324b92df32f2e1180d83b1e6e7fb5250"
+        tag: "v3.4.9"
+        commit: "57536365bda8e994742b22db91ca92360cad6c2c"
 
         
     config-opts:
