@@ -1,6 +1,6 @@
 app-id: io.sourceforge.clonekeenplus
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: CGeniusExe
 rename-desktop-file: cgenius.desktop
@@ -19,8 +19,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.4.9"
-        commit: "57536365bda8e994742b22db91ca92360cad6c2c"
+        tag: "v3.5.1"
+        commit: "bd7f9a8e3875b34f35593099f2080bbacd2fb6b6"
 
         
     config-opts:
