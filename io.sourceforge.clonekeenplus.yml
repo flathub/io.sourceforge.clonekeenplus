@@ -1,6 +1,6 @@
 app-id: io.sourceforge.clonekeenplus
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: CGeniusExe
 rename-desktop-file: cgenius.desktop
