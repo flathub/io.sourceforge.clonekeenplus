@@ -1,36 +1,36 @@
 app-id: io.sourceforge.clonekeenplus
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: CGeniusExe
 rename-desktop-file: cgenius.desktop
 rename-icon: cg
-finish-args: 
-  - --device=all # needed for gamepads 
+finish-args:
+  - --device=all # needed for gamepads
   - --share=ipc # needed for X11
   - --share=network # needed for networking (Gamestore, downloads)
   - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
-
 modules:
+  - shared-modules/SDL2/SDL2_image.json
+  - shared-modules/SDL2/SDL2_ttf.json
   - name: cgenius
-    buildsystem: cmake
-    sources:
-      - type: git
-        url: https://gitlab.com/Dringgstein/Commander-Genius.git
-        tag: "v3.6.0"
-        commit: "bee00e47805909d08568c640073a2123ca7021b1"
-
-        
+    buildsystem: cmake-ninja
+    build-options:
+      # A quick fix for: `fatal error: SDL.h: No such file or directory` error
+      cxxflags: -isystem /app/include/SDL2
     config-opts:
       - -DSHAREDIR=/app/share
       - -DAPPDIR=/app/bin
       - -DBUILD_COSMOS=1
-      - -DCMAKE_BUILD_TYPE="Release"
+      - -DCMAKE_BUILD_TYPE=Release
       - -DALTERNATE_HOME=${XDG_CONFIG_HOME}
-    builddir: true
     post-install:
-      - for s in 16 32 48 64 128 256 512; do install -D -m 644 -t $FLATPAK_DEST/share/hicolor/${s}x${s}/apps ../share/cg.${s}.png; done
-      - install -D -m 644 -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps ../share/cg.svg
-      - install -D -m 644 -t $FLATPAK_DEST/share/metainfo ../share/metainfo/io.sourceforge.clonekeenplus.appdata.xml
+      - install -Dm644 share/cg.svg -t $FLATPAK_DEST/share/icons/hicolor/scalable/apps
+      - install -Dm644 share/metainfo/${FLATPAK_ID}.appdata.xml -t $FLATPAK_DEST/share/metainfo
+    sources:
+      - type: git
+        url: https://gitlab.com/Dringgstein/Commander-Genius.git
+        tag: v3.6.0
+        commit: bee00e47805909d08568c640073a2123ca7021b1
